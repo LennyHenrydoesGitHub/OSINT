@@ -1,0 +1,17 @@
+How to use:
+
+- I grouped data sets from SPIRI in folders 
+- I cleaned(ish) data and created .csv versions of data sets
+- Scripts manipulate csv versions of datasets
+- Work in progress
+- Most work is in Military_spending_all_world and Trade Registry
+- some scripts show results in terminal some generate plots
+
+To run a script:
+
+1. Navigate to folder in directory from terminal
+2. Type python script_name.py and hit enter 
+- you need to uncomment relevant lines under "Usage" comments inside code
+
+Hope this helps
+Work in progress
