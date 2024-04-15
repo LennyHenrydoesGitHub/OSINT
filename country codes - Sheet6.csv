@@ -1,0 +1,261 @@
+country names,country codes
+Antigua and Barbuda,AAB
+Afghanistan,AFG
+Mujahedin (Afghanistan)*,AFG
+Northern Alliance (Afghanistan)*,AFG
+Albania,ALB
+Algeria,ALG
+Andorra,AND
+Angola,ANG
+FNLA (Angola)*,ANG
+UNITA (Angola)*,ANG
+Argentina,ARG
+Armenia,ARM
+Australia,AUL
+Austria,AUS
+Azerbaijan,AZE
+Bahrain,BAH
+Barbados,BAR
+Belgium,BEL
+Benin,BEN
+Burkina Faso,BFO
+Bahamas,BHM
+Bhutan,BHU
+Belarus,BLR
+Belize,BLZ
+Bangladesh,BNG
+Bolivia,BOL
+Bosnia-Herzegovina,BOS
+Botswana,BOT
+Brazil,BRA
+Brunei,BRU
+Burundi,BUI
+Bulgaria,BUL
+Cambodia,CAM
+Khmer Rouge (Cambodia)*,CAM
+Canada,CAN
+Cameroon,CAO
+Cabo Verde,CAP
+Cote d'Ivoire,CDI
+Central African Republic,CEN
+Chad,CHA
+FAN (Chad)*,CHA
+GUNT (Chad)*,CHA
+Chile,CHL
+China,CHN
+Colombia,COL
+Comoros,COM
+DR Congo,CON
+Costa Rica,COS
+Croatia,CRO
+Anti-Castro rebels (Cuba)*,CUB
+Cuba,CUB
+Curacao,CUW
+Cyprus,CYP
+Czechia,CZE
+Czechia,CZR
+Denmark,DEN
+Djibouti,DJI
+Dominica,DMA
+Dominican Republic,DOM
+Congo,DRC
+North Vietnam,DRV
+Ecuador,ECU
+Egypt,EGY
+Equatorial Guinea,EQG
+Eritrea,ERI
+Estonia,EST
+ELF (Ethiopia)*,ETH
+EPLF (Ethiopia)*,ETH
+Ethiopia,ETH
+Fiji,FIJ
+Finland,FIN
+France,FRN
+Micronesia,FSM
+French West Africa,FWA
+Gabon,GAB
+Gambia,GAM
+East Germany (GDR),GDR
+Germany (West Germany),GFR
+Ghana,GHA
+Germany,GMY
+Guinea-Bissau,GNB
+Greece,GRC
+Georgia,GRG
+Greenland,GRL
+Grenada,GRN
+Armas (Guatemala)*,GUA
+Guatemala,GUA
+Guinea,GUI
+Guyana,GUY
+Haiti,HAI
+Haiti rebels*,HAI
+Hijaz,HIJ
+Honduras,HON
+Hungary,HUN
+Iceland,ICE
+India,IND
+Indonesia,INS
+Indonesia rebels*,INS
+Ireland,IRE
+Iran,IRN
+Iraq,IRQ
+Kurdistan Regional Government (Iraq)*,IRQ
+Israel,ISR
+PLO (Israel)*,ISR
+Italy,ITA
+Jamaica,JAM
+Jordan,JOR
+Japan,JPN
+Kenya,KEN
+Kiribati,KIR
+Korea,KOR
+Kosovo,KOS
+Kuwait,KUW
+Kyrgyzstan,KYR
+Kazakhstan,KZK
+Laos,LAO
+Pathet Lao (Laos)*,LAO
+Latvia,LAT
+Liberia,LBR
+Amal (Lebanon)*,LEB
+Hezbollah (Lebanon)*,LEB
+Lebanon,LEB
+Lebanon Palestinian rebels*,LEB
+LF (Lebanon)*,LEB
+SLA (Lebanon)*,LEB
+Lesotho,LES
+Libya,LIB
+Libya GNC,LIB
+Libya HoR*,LIB
+NTC (Libya)*,LIB
+Liechtenstein,LIE
+Lithuania,LIT
+Luxembourg,LUX
+Mauritania,MAA
+Macao,MAC
+Maldives,MAD
+Madagascar,MAG
+Malaysia,MAL
+Mauritius,MAS
+Malawi,MAW
+Mexico,MEX
+Moldova,MLD
+Mali,MLI
+Malta,MLT
+Monaco,MNC
+Mongolia,MON
+Morocco,MOR
+Marshall Islands,MSI
+MTA (Myanmar)*,MYA
+Myanmar,MYA
+United Wa State (Myanmar)*,MYA
+Mayotte,MYT
+Mozambique,MZM
+Najd,NAJ
+Namibia,NAM
+Nepal,NEP
+New Zealand,NEW
+Contras (Nicaragua)*,NIC
+Nicaragua,NIC
+Nigeria,NIG
+Niger,NIR
+Norway,NOR
+Netherlands,NTH
+Oman,OMA
+Pakistan,PAK
+Hamas (Palestine)*,PAL
+Palestine,PAL
+PIJ (Israel/Palestine)*,PAL
+PRC (Israel/Palestine)*,PAL
+Panama,PAN
+Paraguay,PAR
+Peru,PER
+MNLF (Philippines)*,PHI
+Philippines,PHI
+Papua New Guinea,PNG
+Poland,POL
+FRELIMO (Portugal)*,POR
+MPLA (Portugal)*,POR
+PAIGC (Portugal)*,POR
+Portugal,POR
+North Korea,PRK
+Qatar,QAT
+South Korea,ROK
+Romania,RUM
+Russia,RUS
+Soviet Union,RUS
+South Vietnam,RVN
+Viet Cong (South Vietnam)*,RVN
+RPF (Rwanda)*,RWA
+Rwanda,RWA
+ANC (South Africa)*,SAF
+South Africa,SAF
+El Salvador,SAL
+FMLN (El Salvador)*,SAL
+Saudi Arabia,SAU
+Senegal,SEN
+Seychelles,SEY
+RUF (Sierra Leone)*,SIE
+Sierra Leone,SIE
+Singapore,SIN
+Saint Kitts and Nevis,SKN
+Slovakia,SLO
+St Lucia,SLU
+Slovenia,SLV
+San Marino,SNM
+Solomon Islands,SOL
+SNA (Somalia)*,SOM
+Somalia,SOM
+UIC (Somalia)*,SOM
+Western Sahara,SPA
+Spain,SPN
+LTTE (Sri Lanka)*,SRI
+Sri Lanka,SRI
+South Sudan,SSD
+Sao Tome and Principe,STP
+Darfur rebels (Sudan)*,SUD
+SPLA (Sudan)*,SUD
+Sudan,SUD
+Suriname,SUR
+Saint Vincent,SVG
+St Vincent & Grenadines,SVG
+Swaziland,SWA
+Sweden,SWD
+Switzerland,SWZ
+Syria,SYR
+Syria rebels*,SYR
+Tajikistan,TAJ
+Taiwan,TAW
+Tanzania,TAZ
+Tibet,TBT
+Thailand,THI
+Turkmenistan,TKM
+Togo,TOG
+Trinidad and Tobago,TRI
+Tunisia,TUN
+PKK (Turkiye)*,TUR
+Turkiye,TUR
+UAE,UAE
+LRA (Uganda)*,UGA
+Uganda,UGA
+Provisional IRA (UK)*,UKG
+United Kingdom,UKG
+Ukraine,UKR
+Ukraine Rebels*,UKR
+Uruguay,URU
+United States,USA
+Uzbekistan,UZB
+Vanuatu,VAN
+Venezuela,VEN
+France,VFR
+Houthi rebels (Yemen)*,YEM
+North Yemen,YEM
+Yemen Arab Republic (North Yemen),YEM
+South Yemen,YPR
+Southern rebels (Yemen)*,YPR
+Yugoslavia,YUG
+Zambia,ZAM
+Zanzibar,ZAN
+ZAPU (Zimbabwe)*,ZIM
+Zimbabwe,ZIM
