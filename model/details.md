@@ -15,7 +15,7 @@
     -  Increased hidden layer size
 
 ## Hyperparameter Search
-Search 1: 
+#### Search 1: 
   | Learning Rates | Hidden Sizes | Dropout Values | Num Layers |
 |----------------|--------------|----------------|------------|
 | 0.001          | 128          | 0.2            | 2          |
@@ -24,7 +24,7 @@ Search 1:
 
 Best:
 
-Search 2:
+#### Search 2:
   | Learning Rates | Hidden Sizes | Dropout Values | Num Layers |
 |----------------|--------------|----------------|------------|
 |          |         |             |           |
