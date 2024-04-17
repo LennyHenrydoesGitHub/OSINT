@@ -13,7 +13,13 @@
     -  uses a bidirectional LSTM
     -  Dropout added
     -  Increased hidden layer size
-   
+
+## Parameter Search
+  | Learning Rates | Hidden Sizes | Dropout Values | Num Layers |
+|----------------|--------------|----------------|------------|
+| 0.001          | 128          | 0.2            | 2          |
+| 0.01           | 256          | 0.4            | 3          |
+| 0.1            | 512          | 0.6            | 4          |
 ## Model 3
   - Weight decay added
   - Hyperparameters manually tuned
