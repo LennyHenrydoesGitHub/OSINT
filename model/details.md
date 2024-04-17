@@ -14,7 +14,7 @@
     -  Dropout added
     -  Increased hidden layer size
 
-## Parameter Search
+## Hyperparameter Search
 Search 1:
   | Learning Rates | Hidden Sizes | Dropout Values | Num Layers |
 |----------------|--------------|----------------|------------|
@@ -25,6 +25,6 @@ Search 1:
 Search 2:
 ## Model 3
   - Weight decay added
-  - Hyperparameters manually tuned
+  - Hyperparameters changed from search
   - Added a learning rate scheduler
   
