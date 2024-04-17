@@ -15,14 +15,22 @@
     -  Increased hidden layer size
 
 ## Hyperparameter Search
-Search 1:
+Search 1: 
   | Learning Rates | Hidden Sizes | Dropout Values | Num Layers |
 |----------------|--------------|----------------|------------|
 | 0.001          | 128          | 0.2            | 2          |
 | 0.01           | 256          | 0.4            | 3          |
 | 0.1            | 512          | 0.6            | 4          |
+Best:
 
 Search 2:
+  | Learning Rates | Hidden Sizes | Dropout Values | Num Layers |
+|----------------|--------------|----------------|------------|
+|          |         |             |           |
+|          |         |             |           |
+|          |         |             |           |
+Best:
+
 ## Model 3
   - Weight decay added
   - Hyperparameters changed from search
