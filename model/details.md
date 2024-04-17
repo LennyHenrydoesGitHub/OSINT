@@ -22,7 +22,7 @@
 | 0.01           | 256          | 0.4            | 3          |
 | 0.1            | 512          | 0.6            | 4          |
 
-Best:
+Best: 0.001, 256, 0.4, 3
 
 #### Search 2:
   | Learning Rates | Hidden Sizes | Dropout Values | Num Layers |
