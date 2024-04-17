@@ -13,4 +13,9 @@
     -  uses a bidirectional LSTM
     -  Dropout added
     -  Increased hidden layer size
+   
+## Model 3
+  - Weight decay added
+  - Hyperparameters manually tuned
+  - Added a learning rate scheduler
   
