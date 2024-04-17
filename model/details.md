@@ -24,15 +24,6 @@
 
 Best: 0.001, 256, 0.4, 3
 
-#### Search 2:
-  | Learning Rates | Hidden Sizes | Dropout Values | Num Layers |
-|----------------|--------------|----------------|------------|
-|          |         |             |           |
-|          |         |             |           |
-|          |         |             |           |
-
-Best:
-
 ## Model 3
   - Weight decay added
   - Hyperparameters changed from search
