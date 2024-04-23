@@ -1,0 +1,279 @@
+Name,ISO 3166-1
+Andorra,AND
+United Arab Emirates,ARE
+Afghanistan,AFG
+Mujahedin (Afghanistan)*,AFG
+Northern Alliance (Afghanistan)*,AFG
+Antigua and Barbuda,ATG
+Anguilla,AIA
+Albania,ALB
+Armenia,ARM
+Angola,AGO
+FNLA (Angola)*,AGO
+UNITA (Angola)*,AGO
+Antarctica,ATA
+Argentina,ARG
+American Samoa,ASM
+Austria,AUT
+Australia,AUS
+Aruba,ABW
+Azerbaijan,AZE
+Bosnia and Herzegovina,BIH
+Barbados,BRB
+Bangladesh,BGD
+Belgium,BEL
+Burkina Faso,BFA
+Bulgaria,BGR
+Bahrain,BHR
+Burundi,BDI
+Benin,BEN
+Bermuda,BMU
+Brunei,BRN
+Bolivia,BOL
+Brazil,BRA
+Bahamas,BHS
+Bhutan,BTN
+Botswana,BWA
+Belarus,BLR
+Belize,BLZ
+Canada,CAN
+DR Congo,COD
+"Congo, DR",COD
+Central African Republic,CAF
+Congo,COG
+"Congo, Republic",COG
+Switzerland,CHE
+Côte d'Ivoire,CIV
+Chile,CHL
+Cameroon,CMR
+China,CHN
+Colombia,COL
+Costa Rica,CRI
+Cuba,CUB
+Anti-Castro rebels (Cuba)*,CUB
+Cabo Verde,CPV
+Curaçao,CUW
+Cyprus,CYP
+Czechoslovakia,CZE
+Czechia,CZE
+Germany (East Germany),DEU
+German Democratic Republic,DEU
+Germany (West Germany),DEU
+Germany,DEU
+Djibouti,DJI
+Denmark,DNK
+Dominica,DMA
+Dominican Republic,DOM
+Algeria,DZA
+Ecuador,ECU
+Estonia,EST
+Egypt,EGY
+Western Sahara,ESH
+Eritrea,ERI
+Spain,ESP
+Ethiopia,ETH
+ELF (Ethiopia)*,ETH
+EPLF (Ethiopia)*,ETH
+Finland,FIN
+Fiji,FJI
+France,FRA
+Gabon,GAB
+Great Britain,GBR
+United Kingdom,GBR
+Grenada,GRD
+Georgia,GEO
+Ghana,GHA
+Greenland,GRL
+"Gambia, The",GMB
+Gambia,GMB
+Guinea,GIN
+Equatorial Guinea,GNQ
+Greece,GRC
+Guatemala,GTM
+Armas (Guatemala)*,GTM
+Guinea-Bissau,GNB
+Guyana,GUY
+Honduras,HND
+Croatia,HRV
+Haiti,HTI
+Haiti rebels*,HTI
+Hungary,HUN
+Indonesia,IDN
+Indonesia rebels*,IDN
+Ireland,IRL
+Israel,ISR
+PLO (Israel)*,ISR
+India,IND
+Iraq,IRQ
+Kurdistan Regional Government (Iraq)*,IRQ
+Iran,IRN
+Iceland,ISL
+Italy,ITA
+Jamaica,JAM
+Jordan,JOR
+Japan,JPN
+Kenya,KEN
+Kyrgyzstan,KGZ
+Cambodia,KHM
+Khmer Rouge (Cambodia)*,KHM
+Kiribati,KIR
+Comoros,COM
+Saint Kitts and Nevis,KNA
+North Korea,PRK
+"Korea, North",PRK
+South Korea,KOR
+"Korea, South",KOR
+Kuwait,KWT
+Kazakhstan,KAZ
+Laos,LAO
+Pathet Lao (Laos)*,LAO
+Lebanon,LBN
+Lebanon Palestinian rebels*,LBN
+LF (Lebanon)*,LBN
+Amal (Lebanon)*,LBN
+SLA (Lebanon)*,LBN
+Hezbollah (Lebanon)*,LBN
+Saint Lucia,LCA
+Liechtenstein,LIE
+Sri Lanka,LKA
+LTTE (Sri Lanka)*,LKA
+Liberia,LBR
+Lesotho,LSO
+Lithuania,LTU
+Luxembourg,LUX
+Latvia,LVA
+Libya,LBY
+Libya GNC,LBY
+Libya HoR*,LBY
+Morocco,MAR
+Monaco,MCO
+Moldova,MDA
+Montenegro,MNE
+Madagascar,MDG
+Marshall Islands,MHL
+North Macedonia,MKD
+Mali,MLI
+Myanmar,MMR
+United Wa State (Myanmar)*,MMR
+Mongolia,MNG
+Macao,MAC
+Mauritania,MRT
+Malta,MLT
+Mauritius,MUS
+Maldives,MDV
+Malawi,MWI
+Mexico,MEX
+Malaysia,MYS
+Mozambique,MOZ
+Namibia,NAM
+Niger,NER
+Nigeria,NGA
+Nicaragua,NIC
+Contras (Nicaragua)*,NIC
+Netherlands,NLD
+Norway,NOR
+Nepal,NPL
+New Zealand,NZL
+Oman,OMN
+Panama,PAN
+Peru,PER
+Papua New Guinea,PNG
+Philippines,PHL
+Pakistan,PAK
+Poland,POL
+Puerto Rico,PRI
+Palestine,PSE
+Hamas (Palestine)*,PSE
+Portugal,PRT
+Paraguay,PRY
+Qatar,QAT
+Romania,ROU
+Serbia,SRB
+Russia,RUS
+Soviet Union,RUS
+USSR,RUS
+Rwanda,RWA
+Saudi Arabia,SAU
+Solomon Islands,SLB
+Seychelles,SYC
+Sudan,SDN
+SPLA (Sudan)*,SDN
+Sweden,SWE
+Singapore,SGP
+Slovenia,SVN
+Slovakia,SVK
+Sierra Leone,SLE
+San Marino,SMR
+Senegal,SEN
+Somalia,SOM
+SNA (Somalia)*,SOM
+Suriname,SUR
+South Sudan,SSD
+Sao Tome and Principe,STP
+El Salvador,SLV
+FMLN (El Salvador)*,SLV
+Syria,SYR
+Syria rebels*,SYR
+Chad,TCD
+GUNT (Chad)*,TCD
+Togo,TGO
+Thailand,THA
+Tajikistan,TJK
+Timor-Leste,TLS
+Turkmenistan,TKM
+Tunisia,TUN
+Tonga,TON
+Turkey,TUR
+Türkiye,TUR
+Trinidad and Tobago,TTO
+Taiwan,TWN
+Tanzania,TNZ
+Ukraine,UKR
+Ukraine Rebels*,UKR
+Uganda,UGA
+United States,USA
+United States of America,USA
+Uruguay,URY
+Uzbekistan,UZB
+Saint Vincent,VCT
+Venezuela,VEN
+North Vietnam,VNM
+Viet Cong (South Vietnam)*,VNM
+Viet Nam,VNM
+Viet Minh (France)*,VNM
+Vichy France,FRA
+Vanuatu,VUT
+"Yemen, North",YEM
+Yemen Arab Republic (North Yemen),YEM
+South Yemen,YEM
+Southern rebels (Yemen)*,YEM
+Yemen,YEM
+Houthi rebels (Yemen)*,YEM
+Mayotte,MYT
+South Africa,ZAF
+Zambia,ZMB
+Zimbabwe,ZWE
+ZAPU (Zimbabwe)*,ZWE
+Micronesia,
+French West Africa,
+Hijaz,
+Korea,
+Kosovo,
+Najd,
+Swaziland,
+Tibet,
+France (Vichy),FRA
+Yugoslavia,
+Zanzibar,
+African Union**,
+Biafra,
+eSwatini,
+Katanga,
+NATO**,
+Northern Cyprus,
+OSCE**,
+Palau,
+Regional Security System**,
+Samoa,
+United Nations**,
+unknown recipient(s),
