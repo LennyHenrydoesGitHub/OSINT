@@ -28,4 +28,10 @@ Best: 0.001, 256, 0.4, 3
   - Weight decay added
   - Hyperparameters changed from search
   - Added a learning rate scheduler
-  
+
+## Model 5
+  - Runs 9 iterations of different years combos
+
+## Model 6
+  - Runs 10 iterations of 2 different years and 5 different ratios
+    
