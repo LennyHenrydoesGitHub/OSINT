@@ -1,10 +1,10 @@
 import pandas as pd
 import plotly.express as px
 
-f = "./conversion.csv"
+f = "../Visualization/conversion.csv"
 country_codes = pd.read_csv('../Visualization/country_codes-ICB.csv')
-trade_data = pd.read_csv('./all_alphabetical_by_recipient.csv')
-icb2 = pd.read_csv('./icb2v15.csv')
+trade_data = pd.read_csv('../ICB DATA/all_alphabetical_by_recipient.csv')
+icb2 = pd.read_csv('../ICB DATA/icb2v15.csv')
 
 code_to_name = dict(zip(country_codes['Country codes'], country_codes['Name']))
 icb2['country'] = icb2['actor'].map(code_to_name)
