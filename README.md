@@ -4,9 +4,9 @@
 | Examining factors of country before event, see if it can be predicted | 
 
 ### Visualization
-+ [Real conflicts](https://htmlpreview.github.io/?https://github.com/LennyHenrydoesGitHub/OSINT/blob/main/Visualization/real_conflicts_map.html) - Color blind version [here](https://htmlpreview.github.io/?https://github.com/LennyHenrydoesGitHub/OSINT/blob/main/Visualization/model3_map_colorblind.html)
++ [Real conflicts](https://htmlpreview.github.io/?https://github.com/LennyHenrydoesGitHub/OSINT/blob/main/Visualization/html_maps/real_conflicts_map.html) - Color blind version [here](https://htmlpreview.github.io/?https://github.com/LennyHenrydoesGitHub/OSINT/blob/main/Visualization//html_maps/model3_map_colorblind.html)
   
-+ [Model 3](https://htmlpreview.github.io/?https://github.com/LennyHenrydoesGitHub/OSINT/blob/main/Visualization/model3_map.html) - Color blind version [here](https://htmlpreview.github.io/?https://github.com/LennyHenrydoesGitHub/OSINT/blob/main/Visualization/real_map_colorblind.html)
++ [Model 3](https://htmlpreview.github.io/?https://github.com/LennyHenrydoesGitHub/OSINT/blob/main/Visualization//html_maps/model3_map.html) - Color blind version [here](https://htmlpreview.github.io/?https://github.com/LennyHenrydoesGitHub/OSINT/blob/main/Visualization//html_maps/real_map_colorblind.html)
 
 
 ### More links
