@@ -1,23 +1,13 @@
 import pandas as pd
 import plotly.express as px
 
-f = "../Visualization/conversion.csv"
-country_codes = pd.read_csv('../Visualization/country_codes-ICB.csv')
+f = "../Visualization/conversion/conversion.csv"
+country_codes = pd.read_csv('../Visualization/conversion/country_codes-ICB.csv')
 trade_data = pd.read_csv('../ICB DATA/all_alphabetical_by_recipient.csv')
 icb2 = pd.read_csv('../ICB DATA/icb2v15.csv')
 
 code_to_name = dict(zip(country_codes['Country codes'], country_codes['Name']))
 icb2['country'] = icb2['actor'].map(code_to_name)
-
-
-def plot(df, x, y, title):
-    fig = px.bar(df, x=x, y=y, title=title)
-
-    fig.update_layout(margin={"r": 50, "t": 150, "l": 150, "b": 10})
-    fig.update_layout(
-        font=dict(size=25)
-    )
-    fig.show()
 
 
 def countries_involvement_in_wars():
@@ -55,7 +45,7 @@ def suppliers_ranked():
     for country in list_of_countries:
         total = 0
         for order in orders:
-            if country == order[0]:
+            if country == order[0] and not pd.isna(order[1]):
                 total += order[1]
             if order[0] == "Soviet Union" and country == "Russia":
                 total += order[1]
@@ -65,8 +55,8 @@ def suppliers_ranked():
                 total += order[1]
         appearances.append([country, total])
 
-    df = pd.DataFrame(appearances, columns=["", "TIV of arms exported"])
-    df = df.sort_values(by=['TIV of arms exported'], ascending=False)
+    df = pd.DataFrame(appearances, columns=["", "TIV of arms exported (in millions)"])
+    df = df.sort_values(by=['TIV of arms exported (in millions)'], ascending=False)
     return df
 
 
@@ -86,7 +76,7 @@ def importers_ranked():
     for country in list_of_countries:
         total = 0
         for order in orders:
-            if country == order[0]:
+            if country == order[0] and not pd.isna(order[1]):
                 total += order[1]
             if order[0] == "Soviet Union" and country == "Russia":
                 total += order[1]
@@ -94,8 +84,8 @@ def importers_ranked():
                 total += order[1]
         appearances.append([country, total])
 
-    df = pd.DataFrame(appearances, columns=["", "TIV of arms imported"])
-    df = df.sort_values(by=['TIV of arms imported'], ascending=False)
+    df = pd.DataFrame(appearances, columns=["", "TIV of arms imported (in millions)"])
+    df = df.sort_values(by=['TIV of arms imported (in millions)'], ascending=False)
     return df
 
 
@@ -115,52 +105,76 @@ def scatter_plot_relation():
         j = 1
         last_row = 100
         for _, row in df.iterrows():
-            # for _, row3 in df3.iterrows():
-            # if (row[''] != "United States" and row[''] != "Russia" and row[''] != "France"
-                    # and row[''] != "United Kingdom" and row[''] != "Israel"):
-                if row[''] == row2[''] and row[''] != "Thailand":
-                    # if row3['TIV of arms exported'] > 500000:
-                    #     top_exports = 5
-                    # elif row3['TIV of arms exported'] > 100000:
-                    #     top_exports = 4
-                    # elif row3['TIV of arms exported'] > 50000:
-                    #     top_exports = 3
-                    # elif row3['TIV of arms exported'] > 10000:
-                    #     top_exports = 2
-                    # elif row3['TIV of arms exported'] > 5000:
-                    #     top_exports = 1
-                    # else:
-                    #     top_exports = 0
+            for _, row3 in df3.iterrows():
+                if row[''] == row2[''] == row3[''] and row[''] != "Thailand":
+                    if row3[''] == "United States" or row3[''] == "United Kingdom" or row3[''] == "France" or row3[''] == "Russia" or row3[''] == "Germany":
+                        top_exports = "Top 5"
+                    elif row3[''] == "Netherlands" or row3[''] == "Czechia" or row3[''] == "Italy" or row3[''] == "China" or row3[''] == "Israel":
+                        top_exports = "Top 10"
+                    else:
+                        top_exports = "Not in top 10"
                     data.append([row[''], j, i, row['Number of times involved in wars'],
-                                 round(row2['TIV of arms imported'])])
+                                 round(row2['TIV of arms imported (in millions)']), top_exports])
                 if row['Number of times involved in wars'] < last_row:
                     j += 1
                 last_row = row['Number of times involved in wars']
         i += 1
 
-    df = pd.DataFrame(data, columns=['Country name', 'Rank_wars', 'Rank_imports',
-                                     'Number of times involved in wars', 'TIV of arms imported'])
+    df = pd.DataFrame(data, columns=['Country name', 'War rank', 'Import rank',
+                                     'Number of times involved in wars', 'TIV of arms imported (in millions)',
+                                     'Export Rank'])
     return df
 
 
+def plot(df, x, y, title):
+    fig = px.bar(df, x=x, y=y, title=title)
+
+    fig.update_layout(margin={"r": 50, "t": 150, "l": 150, "b": 10})
+    fig.update_layout(
+        font=dict(size=25)
+    )
+    fig.show()
+    # fig.write_html("./imports.html")
+
+
 # df = countries_involvement_in_wars()
-# df = df[df['Number of times involved in wars'] > 15]
-# plot(df, "", "Number of times involved in wars", 'Countries that participated in more than 15 wars, 1949-2022')
+# df = df[df['Number of times involved in wars'] > 3]
+# plot(df, "", "Number of times involved in wars", 'Countries that participated in more than 3 wars, 1949-2022')
+
+######################################################################
 
 # df = suppliers_ranked()
-# df = df[df['TIV of arms exported'] >= 30000]
-# plot(df, "", "TIV of arms exported", 'Countries with the highest TIV of exported arms, 1949-2022')
+# df.to_csv("./Suppliers_ranked")
+# df = df[df['TIV of arms exported (in millions)'] >= 20000]
+# plot(df, " ", "TIV of arms exported (in millions)", 'Countries with the highest TIV of exported arms, 1949-2022')
 
-df = importers_ranked()
-df = df[df['TIV of arms imported'] >= 20000]
-plot(df, "", "TIV of arms imported", 'Countries with the highest TIV of imported arms, 1949-2022')
+# df = pd.read_csv("./Suppliers_ranked")
+# df = df[df['TIV of arms exported (in millions)'] >= 1000]
+# plot(df, "Country name", "TIV of arms exported (in millions)", 'Countries with the highest TIV of exported arms, 1949-2022')
+
+######################################################################
+
+# df = importers_ranked()
+# df.to_csv("./Importers_ranked")
+# df = df[df['TIV of arms imported (in millions)'] >= 8000]
+# plot(df, "", "TIV of arms imported (in millions)", 'Countries with the highest TIV of imported arms, 1949-2022')
+
+df = pd.read_csv("./Importers_ranked")
+df = df[df['TIV of arms imported (in millions)'] >= 40000]
+plot(df, "Country name", "TIV of arms imported (in millions)", 'Countries with the highest TIV of imported arms, 1949-2022')
+
+######################################################################
 
 # df = scatter_plot_relation()
-# fig = px.scatter(df, y="TIV of arms imported", x='Number of times involved in wars',
-#                  hover_data=['Country name', 'Rank_wars', 'Rank_imports'], trendline="ols")
+# df.to_csv("./scatter_data")
+# df = pd.read_csv("./scatter_data")
+#
+# fig = px.scatter(df, y="TIV of arms imported (in millions)", x='Number of times involved in wars', color="Export Rank", symbol="Export Rank",
+#                  hover_data=['Country name', 'War rank', 'Import rank'], title="Relationship between arms imports, exports and military engagement of countries")
 #
 # fig.update_layout(margin={"r": 50, "t": 150, "l": 150, "b": 10})
 # fig.update_layout(
-#     font=dict(size=25)
+#     font=dict(size=22)
 # )
 # fig.show()
+# fig.write_html("./scatter.html")
