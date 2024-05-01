@@ -14,7 +14,7 @@ def read_country_codes(file_path):
             country_codes.append(line.strip())
     return country_codes
 
-file_path = 'Africa.txt'  # Replace 'country_codes.txt' with the path to your file
+file_path = 'CSI.txt'  # Replace 'country_codes.txt' with the path to your file
 country_codes_list = read_country_codes(file_path)
 print(country_codes_list)
 
@@ -45,12 +45,12 @@ def write_filtered_csv(filtered_df, output_file):
 
 
 # Provide the path to your CSV file
-csv_file_path = 'matrix_names-CW.csv'
+csv_file_path = 'matrix_names-CSI.csv'
 # Call the function to filter the CSV
 filtered_df = filter_csv_by_country_codes(csv_file_path)
 
 # Provide the path for the new filtered CSV file
-output_csv_path = 'matrix_names-africa90.csv'
+output_csv_path = 'matrix_names-CSI.csv'
 
 # Write the filtered DataFrame to the new CSV file
 write_filtered_csv(filtered_df, output_csv_path)

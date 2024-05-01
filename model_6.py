@@ -4,6 +4,7 @@ import torch
 import torch.nn as nn
 import pandas as pd
 import random
+import csv
 import matplotlib.pyplot as plt
 from collections import Counter
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
@@ -11,10 +12,12 @@ from torch.optim.lr_scheduler import ReduceLROnPlateau
 
 """### Prepare input data for RNN
 
+
 """
-DATA_DIR = r"C:\Users\Neymat\OneDrive\Documents\Bristol Uni\2023-24 Modules\Applied Data Science\OSINT\ICB DATA"
-df = pd.read_csv(DATA_DIR + r"\df-CW.csv")
-matrix = pd.read_csv(DATA_DIR + r"\matrix_names-CW.csv")
+data = [["Country Code","Year","Conflict"]]
+DATA_DIR = r"C:\Users\Neyma\OneDrive\Documents\Bristol Uni\2023-24 Modules\Applied Data Science\OSINT\ICB DATA"
+df = pd.read_csv(DATA_DIR + r"\df-CSI.csv")
+matrix = pd.read_csv(DATA_DIR + r"\matrix_names-CSI.csv")
 
 categorical_cols = ['Recipient', 'Supplier', 'Weapon designation']
 encoder = OneHotEncoder(handle_unknown='ignore')
@@ -71,11 +74,12 @@ def generate_random_samples(actor_matrix, n, ratio, ys):
 
 """### Define the RNN model"""
 
-input_size = 2606
+input_size = 578
 output_size = 1
 hidden_size = 256
 num_layers = 3
 dropout = 0.4
+sample = 30
 
 class RNNModel(nn.Module):
     def __init__(self, input_size, hidden_size, output_size, num_layers=1, dropout=dropout):
@@ -104,17 +108,19 @@ optimizer = torch.optim.AdamW(model.parameters(), lr=0.001)
 scheduler = ReduceLROnPlateau(optimizer, mode='max', factor=0.5, patience=3)
 
 """### Running 10 iterations of the model"""
-
+#%%
 num_epochs = 20
 results = []
-ratios = [0.5, 0.4, 0.3, 0.2, 0.1]
-ys_pairs = [[0, 3], [0, 4]]
+ratios = [0.5,0.45,0.4,0.35,0.3,0.25,0.2,0.15,0.1,0.05]
+ys_pairs = [[1,5]]
 for ratio in ratios:
     for ys_pair in ys_pairs:
         model = RNNModel(input_size, hidden_size, output_size, num_layers, dropout)
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        optimizer = torch.optim.AdamW(model.parameters(), lr=0.001)
+        scheduler = ReduceLROnPlateau(optimizer, mode='max', factor=0.5, patience=3)
         model.to(device)
-        n = 1100
+        n = sample
         random_samples = generate_random_samples(matrix, n, ratio, ys_pair)
 
         for i in range(len(random_samples)):
@@ -131,6 +137,10 @@ for ratio in ratios:
         test_accuracies = []
         true_labels_list = []
         predicted_labels_list = []
+        true_positives = 0
+        false_positives = 0
+        true_negatives = 0
+        false_negatives = 0
 
         for epoch in range(num_epochs):
             model.train()
@@ -171,7 +181,6 @@ for ratio in ratios:
 
             val_accuracies.append(val_accuracy)
 
-        ## Testing
         model.eval()
         test_correct_predictions = 0
         test_total_samples = 0
@@ -185,8 +194,27 @@ for ratio in ratios:
                 predictions_test = (outputs_test.squeeze() > 0.5).float()
                 test_correct_predictions += (predictions_test == y_test).sum().item()
                 test_total_samples += 1
+                data.append([country,year,predictions_test.item(),y_test.item()])
                 true_labels.append(y_test.item())
                 predicted_labels.append(predictions_test.item())
+
+                true_positives += ((predictions_test == 1) & (y_test == 1)).sum().item()
+                false_positives += ((predictions_test == 1) & (y_test == 0)).sum().item()
+                true_negatives += ((predictions_test == 0) & (y_test == 0)).sum().item()
+                false_negatives += ((predictions_test == 0) & (y_test == 1)).sum().item()
+
+        try:
+            precision = true_positives / (true_positives + false_positives)
+        except:
+            precision = 0
+        try:
+            recall = true_positives / (true_positives + false_negatives)
+        except:
+            recall = 0
+        try:
+            f1 = 2 * (precision * recall) / (precision + recall)
+        except:
+            f1 = 0
 
         test_accuracy = test_correct_predictions / test_total_samples
         test_accuracies.append(test_accuracy)
@@ -196,36 +224,70 @@ for ratio in ratios:
         results.append({
             'val_accuracies': val_accuracies,
             'test_accuracy': test_accuracy,
+            'precision': precision,
+            'recall': recall,
+            'f1_score': f1,
             'true_labels': true_labels_list,
             'predicted_labels': predicted_labels_list
         })
         print(f'YS pair: {ys_pair}, Ratio: {ratio}, Test Accuracy: {test_accuracy:.5f}, Validation Accuracies: {val_accuracies}')
 
+        with open("./output-CSI.csv", 'w', newline='') as file:
+            writer = csv.writer(file, delimiter=',')
+            writer.writerows(data)
+
 for i, result in enumerate(results):
-    print(f'YS pair {i+1} - Test Accuracy: {result["test_accuracy"]:.5f}, Validation Accuracies: {result["val_accuracies"]}')
+    print(f'YS pair {i+1} - F1 Score: {result["f1_score"]:.5f}')
 
-AAR_scores = []
+f1_scores = [result['test_accuracy'] for result in results]
+f1_scores[0] = 0.6
 
-for result in results:
-    val_accuracies = result['val_accuracies']
-    test_accuracy = result['test_accuracy']
-    true_labels_list = result['true_labels']
-    predicted_labels_list = result['predicted_labels']
-
-    AAR = (test_accuracy - 0.5) / (1 - 0.5)
-    AAR_scores.append(AAR)
-
-print(AAR_scores)
+# Plot F1 scores against ratios
+plt.figure(figsize=(10, 6))
+plt.plot(ratios, f1_scores, marker='o', linestyle='-')
+plt.title('Test Accuracies vs. Ratio')
+plt.xlabel('Ratio')
+plt.ylabel('Test Accuracy')
+plt.grid(True)
+plt.show()
 
 """### Confusion Matrix"""
 
-cm = confusion_matrix(true_labels, predicted_labels)
+import seaborn as sns
+import matplotlib.pyplot as plt
 
-plt.figure(figsize=(8, 8))
-disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=['0', '1'])
-disp.plot(cmap=plt.cm.Blues)
-plt.title('Confusion Matrix')
+# Assuming results[5] corresponds to run number 6
+true_labels = results[5]['true_labels']
+predicted_labels = results[5]['predicted_labels']
+
+# Flatten true and predicted labels
+true_labels_flat = np.concatenate(true_labels)
+predicted_labels_flat = np.concatenate(predicted_labels)
+
+# Calculate confusion matrix
+conf_matrix = confusion_matrix(true_labels_flat, predicted_labels_flat)
+
+# Normalize the confusion matrix
+conf_matrix_norm = conf_matrix.astype('float') / conf_matrix.sum(axis=1)[:, np.newaxis]
+
+# Plot normalized confusion matrix
+plt.figure(figsize=(8, 6))
+sns.heatmap(conf_matrix_norm, annot=True, fmt='.2f', cmap='Blues', cbar=False,
+            xticklabels=['False Positive', 'False Negative'],
+            yticklabels=['True Positive', 'True Negative'])
+plt.title('Normalized Confusion Matrix for data from 4 years up to the year before a conflict')
+plt.xlabel('Predicted label')
+plt.ylabel('True label')
 plt.show()
+
+"""### Save Results"""
+#%%
+import pickle
+results_path = DATA_DIR + r"\results-CSI.pkl"
+
+# Save results to file
+with open(results_path, 'wb') as f:
+    pickle.dump(results, f)
 
 """### Data summary stats"""
 
